@@ -1,0 +1,4 @@
+com.molandev.framework.encrypt.db.DbEncryptAutoConfiguration
+com.molandev.framework.encrypt.params.EncryptedParamsConfiguration
+com.molandev.framework.encrypt.sign.SignAutoConfiguration
+com.molandev.framework.encrypt.hybrid.HybridEncryptAutoConfiguration

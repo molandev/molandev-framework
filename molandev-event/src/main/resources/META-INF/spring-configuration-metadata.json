@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "molandev",
+      "type": "com.molandev.framework.event.config.EventAutoConfiguration",
+      "sourceType": "com.molandev.framework.event.config.EventAutoConfiguration",
+      "description": "MolanDev 框架核心配置"
+    }
+  ],
+  "properties": [
+    {
+      "name": "molandev.run-mode",
+      "type": "java.lang.String",
+      "defaultValue": "cloud",
+      "description": "运行模式：cloud (微服务远程调用) / single (单体模式，本地调用)"
+    }
+  ],
+  "hints": [
+    {
+      "name": "molandev.run-mode",
+      "values": [
+        {
+          "value": "cloud",
+          "description": "微服务模式：事件通过 RabbitMQ 跨服务传递"
+        },
+        {
+          "value": "single",
+          "description": "单体模式：事件在进程内传递，无网络开销"
+        }
+      ]
+    }
+  ]
+}

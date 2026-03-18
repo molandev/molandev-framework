@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "molandev",
+      "type": "com.molandev.framework.datasource.DataSourceProperties",
+      "sourceType": "com.molandev.framework.datasource.DataSourceProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "molandev.datasource",
+      "type": "java.util.Map<java.lang.String,com.molandev.framework.datasource.DataSourceProperties$DataSourceConfig>",
+      "description": "数据源配置，key为数据源名称，value为具体配置"
+    },
+    {
+      "name": "molandev.datasource.*.url",
+      "type": "java.lang.String",
+      "description": "数据库URL"
+    },
+    {
+      "name": "molandev.datasource.*.username",
+      "type": "java.lang.String",
+      "description": "用户名"
+    },
+    {
+      "name": "molandev.datasource.*.password",
+      "type": "java.lang.String",
+      "description": "密码"
+    },
+    {
+      "name": "molandev.datasource.*.driver-class-name",
+      "type": "java.lang.String",
+      "description": "驱动类名"
+    },
+    {
+      "name": "molandev.datasource.*.type",
+      "type": "java.lang.String",
+      "defaultValue": "com.zaxxer.hikari.HikariDataSource",
+      "description": "连接池类型（默认为 HikariCP）"
+    },
+    {
+      "name": "molandev.datasource.*.primary",
+      "type": "java.lang.Boolean",
+      "defaultValue": false,
+      "description": "是否为主数据源"
+    },
+    {
+      "name": "molandev.datasource.*.packages",
+      "type": "java.util.List<java.lang.String>",
+      "description": "该数据源关联的包名列表"
+    },
+    {
+      "name": "molandev.datasource.*.pool",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "通用连接池配置（支持任意连接池的配置项）"
+    }
+  ]
+}

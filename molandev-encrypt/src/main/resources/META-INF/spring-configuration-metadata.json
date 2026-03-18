@@ -1,0 +1,222 @@
+{
+  "groups": [
+    {
+      "name": "molandev.encrypt",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties"
+    },
+    {
+      "name": "molandev.encrypt.db",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties.DbProperties",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties",
+      "sourceMethod": "getDb()"
+    },
+    {
+      "name": "molandev.encrypt.params",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties.ParamsProperties",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties",
+      "sourceMethod": "getParams()"
+    },
+    {
+      "name": "molandev.encrypt.sign",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties",
+      "sourceMethod": "getSign()"
+    },
+    {
+      "name": "molandev.encrypt.hybrid",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties",
+      "sourceMethod": "getHybrid()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "molandev.encrypt.db.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启数据库加密功能，开启后，字段上增加@Enc注解，即可实现保存数据库和查询时自动加解密。",
+      "defaultValue": false,
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.DbProperties"
+    },
+    {
+      "name": "molandev.encrypt.db.type",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties$EncryptType",
+      "description": "加密方式。",
+      "defaultValue": "AES",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.DbProperties"
+    },
+    {
+      "name": "molandev.encrypt.db.algorithm",
+      "type": "java.lang.String",
+      "description": "默认的加密算法。",
+      "defaultValue": "AES/ECB/PKCS5Padding",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.DbProperties"
+    },
+    {
+      "name": "molandev.encrypt.db.key",
+      "type": "java.lang.String",
+      "description": "加密密钥，必传。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.DbProperties"
+    },
+    {
+      "name": "molandev.encrypt.params.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启参数加密功能。",
+      "defaultValue": false,
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.ParamsProperties"
+    },
+    {
+      "name": "molandev.encrypt.params.type",
+      "type": "com.molandev.framework.encrypt.common.EncryptProperties$EncryptType",
+      "description": "加密方式。",
+      "defaultValue": "AES",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.ParamsProperties"
+    },
+    {
+      "name": "molandev.encrypt.params.algorithm",
+      "type": "java.lang.String",
+      "description": "默认的加密算法。",
+      "defaultValue": "AES/ECB/PKCS5Padding",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.ParamsProperties"
+    },
+    {
+      "name": "molandev.encrypt.params.key",
+      "type": "java.lang.String",
+      "description": "加密密钥，必传。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.ParamsProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启签名校验功能。",
+      "defaultValue": false,
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.secret",
+      "type": "java.lang.String",
+      "description": "签名密钥。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.sign-name",
+      "type": "java.lang.String",
+      "description": "签名参数名称。",
+      "defaultValue": "sign",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.timestamp-name",
+      "type": "java.lang.String",
+      "description": "时间戳参数名称。",
+      "defaultValue": "timestamp",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.nonce-name",
+      "type": "java.lang.String",
+      "description": "随机数参数名称。",
+      "defaultValue": "nonce",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.expire-time",
+      "type": "java.lang.Long",
+      "description": "签名有效期，单位秒。",
+      "defaultValue": 300,
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.url-pattern",
+      "type": "java.lang.String",
+      "description": "拦截的路由。",
+      "defaultValue": "/*",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.order",
+      "type": "java.lang.Integer",
+      "description": "过滤器优先级。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.sign.whitelist",
+      "type": "java.util.List<java.lang.String>",
+      "description": "白名单，支持Ant风格路径匹配。例如：/api/public/**、/health、/actuator/**",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.SignProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启双层加密功能。",
+      "defaultValue": false,
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.public-key",
+      "type": "java.lang.String",
+      "description": "RSA公钥（用于加密AES密钥返回给客户端）。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.private-key",
+      "type": "java.lang.String",
+      "description": "RSA私钥（用于解密客户端发送的加密AES密钥）。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.aes-algorithm",
+      "type": "java.lang.String",
+      "description": "AES加密算法。",
+      "defaultValue": "AES/ECB/PKCS5Padding",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.url-pattern",
+      "type": "java.lang.String",
+      "description": "拦截的路由。",
+      "defaultValue": "/*",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.order",
+      "type": "java.lang.Integer",
+      "description": "过滤器优先级。",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    },
+    {
+      "name": "molandev.encrypt.hybrid.whitelist",
+      "type": "java.util.List<java.lang.String>",
+      "description": "白名单，支持Ant风格路径匹配。例如：/api/public/**、/health、/actuator/**",
+      "sourceType": "com.molandev.framework.encrypt.common.EncryptProperties.HybridProperties"
+    }
+  ],
+  "hints": [
+    {
+      "name": "molandev.encrypt.db.type",
+      "values": [
+        {
+          "value": "AES",
+          "description": "AES加密算法。"
+        },
+        {
+          "value": "DES",
+          "description": "DES加密算法。"
+        }
+      ]
+    },
+    {
+      "name": "molandev.encrypt.params.type",
+      "values": [
+        {
+          "value": "AES",
+          "description": "AES加密算法。"
+        },
+        {
+          "value": "DES",
+          "description": "DES加密算法。"
+        }
+      ]
+    }
+  ]
+}

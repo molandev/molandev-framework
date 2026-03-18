@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "molandev",
+      "type": "com.molandev.framework.rpc.config.RpcProperties",
+      "sourceType": "com.molandev.framework.rpc.config.RpcProperties",
+      "description": "MolanDev 框架核心配置"
+    }
+  ],
+  "properties": [
+    {
+      "name": "molandev.run-mode",
+      "type": "java.lang.String",
+      "defaultValue": "cloud",
+      "description": "运行模式：cloud (微服务远程调用) / single (单体模式，本地调用)"
+    }
+  ],
+  "hints": [
+    {
+      "name": "molandev.run-mode",
+      "values": [
+        {
+          "value": "cloud",
+          "description": "微服务模式：Feign 接口走远程 HTTP 调用"
+        },
+        {
+          "value": "single",
+          "description": "单体模式：接口实现走本地 Spring Bean 注入，无网络开销"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.molandev</groupId>
+    <artifactId>molandev-dependencies</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>molandev-dependencies</name>
+    <description>MolanDev Framework Dependencies BOM</description>
+
+    <properties>
+        <molandev.version>1.0.0-SNAPSHOT</molandev.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 基础工具类 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-util</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- Spring 增强 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-spring</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- 加解密组件 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-encrypt</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- 分布式锁/幂等 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-lock</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- 动态数据源 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-datasource</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- RPC 组件 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-rpc</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- 事件发布订阅 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-event</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+            <!-- 文件存储 -->
+            <dependency>
+                <groupId>com.molandev</groupId>
+                <artifactId>molandev-file</artifactId>
+                <version>${molandev.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

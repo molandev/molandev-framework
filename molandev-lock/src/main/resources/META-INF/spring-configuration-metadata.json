@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "molandev.lock",
+      "type": "com.molandev.framework.lock.config.LockProperties",
+      "sourceType": "com.molandev.framework.lock.config.LockProperties",
+      "description": "分布式锁配置"
+    }
+  ],
+  "properties": [
+    {
+      "name": "molandev.lock.type",
+      "type": "com.molandev.framework.lock.config.LockProperties$LockFactoryType",
+      "defaultValue": "memory",
+      "description": "锁工厂类型，支持三种实现方式"
+    }
+  ],
+  "hints": [
+    {
+      "name": "molandev.lock.type",
+      "values": [
+        {
+          "value": "redis",
+          "description": "基于 RedisTemplate 的分布式锁实现（推荐用于生产环境）"
+        },
+        {
+          "value": "memory",
+          "description": "基于内存的本地锁实现（仅用于本地开发和测试）"
+        },
+        {
+          "value": "redisson",
+          "description": "基于 Redisson 的分布式锁实现"
+        }
+      ]
+    }
+  ]
+}

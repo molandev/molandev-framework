@@ -1,0 +1,21 @@
+mybatis-flex:
+  global-config:
+    # 启动时不打印banner
+    print-banner: false
+    key-config:
+      key-type: Generator
+      value: uuid
+    normal-value-of-logic-delete: false
+    deleted-value-of-logic-delete: true
+    logic-delete-column: deleted
+  configuration:
+    # 驼峰下划线映射
+    map-underscore-to-camel-case: true
+    # 禁用一级缓存
+    local-cache-scope: statement
+    # 禁用二级缓存
+    cache-enabled: false
+    # 日志打印的包名前缀
+    log-prefix: mybatis.
+  # 设置xml的默认扫描路径
+  mapperLocations: classpath*:/**/mapper/**/*Mapper.xml

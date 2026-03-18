@@ -1,0 +1,61 @@
+{
+  "groups": [
+    {
+      "name": "molandev.autoconfig.json",
+      "type": "com.molandev.framework.spring.json.JsonAutoConfiguration",
+      "sourceType": "com.molandev.framework.spring.json.JsonAutoConfiguration"
+    },
+    {
+      "name": "molandev.autoconfig.task",
+      "type": "com.molandev.framework.spring.task.TaskAutoConfiguration",
+      "sourceType": "com.molandev.framework.spring.task.TaskAutoConfiguration"
+    },
+    {
+      "name": "molandev.autoconfig.xss",
+      "type": "com.molandev.framework.spring.xss.XssProperties",
+      "sourceType": "com.molandev.framework.spring.xss.XssProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "molandev.autoconfig.json.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否启用JSON自动配置，用于自定义时间格式转换规则",
+      "defaultValue": true
+    },
+    {
+      "name": "molandev.autoconfig.task.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否启用任务调度自动配置，用于定时任务处理",
+      "defaultValue": true
+    },
+    {
+      "name": "molandev.autoconfig.xss.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否启用XSS防护过滤器",
+      "defaultValue": false
+    },
+    {
+      "name": "molandev.autoconfig.xss.uri",
+      "type": "java.lang.String",
+      "description": "XSS过滤器拦截的路由路径",
+      "defaultValue": "/*"
+    },
+    {
+      "name": "molandev.autoconfig.xss.path-patterns",
+      "type": "java.util.List<java.lang.String>",
+      "description": "XSS过滤器拦截的路由路径列表"
+    },
+    {
+      "name": "molandev.autoconfig.xss.path-exclude-patterns",
+      "type": "java.util.List<java.lang.String>",
+      "description": "XSS过滤器排除的路由路径列表"
+    },
+    {
+      "name": "molandev.autoconfig.xss.order",
+      "type": "java.lang.Integer",
+      "description": "XSS过滤器执行顺序，值越小优先级越高",
+      "defaultValue": -2147483638
+    }
+  ]
+}

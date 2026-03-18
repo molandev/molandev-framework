@@ -1,0 +1,3 @@
+com.molandev.framework.spring.xss.XssAutoConfiguration
+com.molandev.framework.spring.json.JsonAutoConfiguration
+com.molandev.framework.spring.task.TaskAutoConfiguration
