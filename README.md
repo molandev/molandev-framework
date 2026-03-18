@@ -111,14 +111,14 @@
 <dependency>
     <groupId>com.molandev</groupId>
     <artifactId>molandev-util</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 
 <!-- 双模驱动架构核心 -->
 <dependency>
     <groupId>com.molandev</groupId>
     <artifactId>molandev-rpc</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 
 <!-- 其他模块：molandev-event、molandev-datasource、molandev-encrypt、molandev-lock、molandev-file、molandev-spring -->
@@ -134,7 +134,7 @@
         <dependency>
             <groupId>com.molandev</groupId>
             <artifactId>molandev-dependencies</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>

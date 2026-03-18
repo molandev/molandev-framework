@@ -7,13 +7,37 @@
     <parent>
         <groupId>com.molandev</groupId>
         <artifactId>molandev-framework</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>molandev-lock</artifactId>
     <name>molandev-lock</name>
-    <description>分布式锁工具模块</description>
+    <description>MolanDev Framework - 分布式锁与幂等性组件</description>
+    <url>https://molandev.com</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>MolanDev Team</name>
+            <email>molandev@outlook.com</email>
+            <organization>MolanDev</organization>
+            <organizationUrl>https://molandev.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/molandev/molandev-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:molandev/molandev-framework.git</developerConnection>
+        <url>https://github.com/molandev/molandev-framework</url>
+    </scm>
 
     <dependencies>
         <dependency>

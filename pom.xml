@@ -6,8 +6,36 @@
 
     <groupId>com.molandev</groupId>
     <artifactId>molandev-framework</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
+
+    <!-- 项目元信息 -->
+    <name>MolanDev Framework</name>
+    <description>一套代码，单体与微服务自由切换的 Java 后端核心组件库</description>
+    <url>https://molandev.com</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>MolanDev Team</name>
+            <email>molandev@outlook.com</email>
+            <organization>MolanDev</organization>
+            <organizationUrl>https://molandev.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/molandev/molandev-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:molandev/molandev-framework.git</developerConnection>
+        <url>https://github.com/molandev/molandev-framework</url>
+    </scm>
 
     <modules>
         <module>molandev-util</module>
@@ -30,7 +58,7 @@
     <properties>
         <java.version>17</java.version>
         <pom.package>jar</pom.package>
-        <molan.version>1.0.0-SNAPSHOT</molan.version>
+        <molan.version>1.0.1</molan.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
@@ -141,17 +169,61 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven.source.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- GPG 签名插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Javadoc 插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
                 <configuration>
-                    <attach>true</attach>
+                    <source>17</source>
+                    <encoding>UTF-8</encoding>
+                    <doclint>none</doclint>
                 </configuration>
                 <executions>
                     <execution>
+                        <id>attach-javadocs</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <!-- Maven Central Portal 发布插件 -->
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.10.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>published</waitUntil>
+                </configuration>
             </plugin>
         </plugins>
     </build>
